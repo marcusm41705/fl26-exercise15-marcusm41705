@@ -15,13 +15,24 @@ class ThreadSafeVector{
     public:
     ThreadSafeVector() = default;
     ThreadSafeVector& operator=(const ThreadSafeVector&) = delete;
-    void push_back(const T& value){
-        {
+    void push_back(const T& value){{ //moving elements into vector
+        
         std::lock_guard<std::mutex> lock(the_mutex);
+
         data_vec.push_back(value);
         }
         condition.notify_one();
     }
+    void push_back(T&& value){{ //moving elements into vector
+        
+        std::lock_guard<std::mutex> lock(the_mutex);
+
+        data_vec.push_back(std::move(value));
+        }
+        condition.notify_one();
+    }
+    
+    
     void wait_and_pop_back(T& value){
         std::unique_lock<std::mutex> lock(the_mutex);
         condition.wait(lock, [this]{
