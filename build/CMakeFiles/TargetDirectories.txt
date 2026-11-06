@@ -1,0 +1,3 @@
+/mnt/build/CMakeFiles/test_vector.dir
+/mnt/build/CMakeFiles/edit_cache.dir
+/mnt/build/CMakeFiles/rebuild_cache.dir

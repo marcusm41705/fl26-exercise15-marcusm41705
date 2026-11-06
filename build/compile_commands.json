@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/mnt/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++14 -o CMakeFiles/test_vector.dir/test_vector.cpp.o -c /mnt/test_vector.cpp",
+  "file": "/mnt/test_vector.cpp",
+  "output": "CMakeFiles/test_vector.dir/test_vector.cpp.o"
+}
+]
